@@ -1,0 +1,31 @@
+.navBarContainer {
+    display:flex;
+    background-color: black;
+    height : 80px;
+}
+.youtube {
+    color : white;
+    font-size : 30px;
+    margin-top : 15px;
+    margin-left : 10px;
+    cursor:pointer;
+}
+.search {
+    width : 700px;
+    height : 40px;
+    margin-left : 500px;
+    margin-top : 15px;
+}
+.searchBox {
+    border : solid black 0px;
+    width : 45px;
+    height : 45px;
+    background-color: gray;
+    line-height : 60px;
+    text-align:center;
+    margin-top : 15px;
+}
+.youtubeLogo {
+    margin-top : 15px;
+    cursor:pointer;
+}
