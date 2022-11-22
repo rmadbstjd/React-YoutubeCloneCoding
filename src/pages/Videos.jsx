@@ -1,11 +1,13 @@
-import React from 'react';
-import useStore from '../store';
+import React,{useEffect} from 'react';
+
+import { useParams } from 'react-router-dom';
 const Videos = () => {
-    const {keyword} = useStore(state =>state);
-    console.log("키워드",keyword);
+    const {keyword} = useParams();
+   
+    
     return (
         <div>
-            {keyword.length===0?"Hot Videos":"Search Videos"} 
+            {keyword?`Videos for ${keyword}`:`Hot Videos`} 
         </div>
     );
 };
