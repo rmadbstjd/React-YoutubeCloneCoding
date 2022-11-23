@@ -1,11 +1,13 @@
 import React,{useState, useEffect} from 'react';
 import styles from './css/Navbar.module.css';
 import {TfiSearch} from 'react-icons/tfi';
-import {AiFillYoutube} from 'react-icons/ai';
+import {AiFillYoutube, AiOutlineBgColors} from 'react-icons/ai';
 import {useNavigate, useParams} from 'react-router-dom';
-import useStore from '../store';
+import {useMediaQuery} from 'react-responsive';
 
 const Navbar = () => {
+    
+    const isMobile = useMediaQuery({query: 'max-width:890px'});
     const {keyword} = useParams();
     const [text, setText] = useState('');
    
@@ -25,14 +27,21 @@ const Navbar = () => {
     }, [keyword]);
     
     return (
+        
         <div className={styles.navBarContainer}>
-            
-            <AiFillYoutube className={styles.youtubeLogo}color="red" size={50} onClick={() =>{navigate('/')}}/>
-            <div className={styles.youtube} onClick={() =>{navigate('/')}}>YOUTUBE</div>
-            <form onSubmit={(e) =>submitKeyword(e)}>
-                <input type="text" placeholder={keyword} value={text}onChange ={(e) =>setText(e.target.value)}className={styles.search}></input>
-                <button className={styles.searchBox}><TfiSearch size={25} color="white"/></button>
+             
+            <div className={styles.youtubeContainer}>
+                <AiFillYoutube className={styles.youtubeLogo}color="red" size={50} onClick={() =>{navigate('/')}}/>
+                <div className={styles.youtube}  onClick={() =>{navigate('/')}}>Youtube</div>
+            </div>
+            <div className={styles.formContainer}>
+            <form onSubmit={(e) =>submitKeyword(e)} className={styles.submit}>
+                <input type="text" placeholder="Search..." value={text}onChange ={(e) =>setText(e.target.value)}className={styles.search}></input>
+                 
+                    <button className={styles.searchBox}><TfiSearch style={{marginTop : "5px"}}size={28} color="white"/></button>
+                
             </form>
+            </div>
             
             
         </div>

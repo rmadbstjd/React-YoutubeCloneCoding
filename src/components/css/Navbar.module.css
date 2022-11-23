@@ -1,31 +1,61 @@
 .navBarContainer {
     display:flex;
     background-color: black;
+    justify-content: space-between;
+    
     height : 80px;
 }
+.youtubeContainer {
+    
+    display: flex;
+}
+.formContainer {
+    
+    min-width: 560px;
+    width: 1060px;
+    margin-left : atuo;
+    margin-right : 230px;
+    display:flex;
+    
+    
+}
 .youtube {
-    color : white;
+    color:white;
     font-size : 30px;
     margin-top : 15px;
-    margin-left : 10px;
     cursor:pointer;
+   
 }
 .search {
-    width : 700px;
+    
+    width: 50%;
+    min-width: 200px;
     height : 40px;
-    margin-left : 500px;
-    margin-top : 15px;
+    margin-top : 17px;
+    flex-shrink: 1;
+    
+   
 }
 .searchBox {
-    border : solid black 0px;
-    width : 45px;
-    height : 45px;
+    border : solid black 1px;
+    width : 48px;
+    height : 48px;
+    margin-top : 16px;
     background-color: gray;
-    line-height : 60px;
-    text-align:center;
-    margin-top : 15px;
+    cursor:pointer;
+    
+    
+    
 }
+
 .youtubeLogo {
     margin-top : 15px;
     cursor:pointer;
+}
+.submit {
+    
+    display:flex;
+    justify-content: flex-start;
+    
+    width : 1060px;
 }
