@@ -9,6 +9,7 @@ export default class Youtube {
   async search(keyword) {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }
+  //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&key=AIzaSyD3kttxOh47zCyy4sZ0h0bL8Y_eYTqjTRg
   async #searchByKeyword(keyword) {
     return this.httpClient
       .get("search", {
@@ -22,6 +23,7 @@ export default class Youtube {
       .then((res) => res.data.items)
       .then((items) => items.map((item) => ({ ...item, id: item.id.videoId })));
   }
+  //https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyD3kttxOh47zCyy4sZ0h0bL8Y_eYTqjTRg
   async #mostPopular(keyword) {
     return this.httpClient
       .get("videos", {
