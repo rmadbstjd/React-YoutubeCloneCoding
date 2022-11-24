@@ -2,7 +2,7 @@ import React,{useEffect} from 'react';
 import VideoCard from '../components/VideoCard';
 import { useParams } from 'react-router-dom';
 import {useQuery} from '@tanstack/react-query';
-
+import { search } from '../api/youtube';
 const Videos = () => {
     const {keyword} = useParams();
     /*const {isLoading,error,data:hotVideos} = useQuery(['hotVideos'], async() => {
@@ -19,11 +19,7 @@ const Videos = () => {
         isLoading,
         error,
         data: videos,
-      } = useQuery(['videos', keyword], async () => {
-        return fetch(`/videos/${keyword ? 'search' : 'popular'}.json`)
-          .then((res) => res.json())
-          .then((data) => data.items);
-      });
+      } = useQuery(['videos', keyword],()=> search(keyword));
     console.log("비디오",videos);
     return (
         <div>
