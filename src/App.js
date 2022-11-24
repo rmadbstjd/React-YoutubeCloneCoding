@@ -3,6 +3,7 @@ import Root from "./pages/Root";
 import Videos from "./pages/Videos";
 import VideoDetail from "./pages/VideoDetail";
 import NotFound from "./pages/NotFound";
+
 function App() {
   const router = createBrowserRouter([
     {
