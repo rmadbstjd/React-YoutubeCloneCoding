@@ -3,6 +3,8 @@ import VideoCard from '../components/VideoCard';
 import { useParams } from 'react-router-dom';
 import {useQuery} from '@tanstack/react-query';
 import { search } from '../api/youtube';
+import FakeYoutube from '../api/fakeYoutube';
+import Youtube from '../api/youtube';
 const Videos = () => {
     const {keyword} = useParams();
     /*const {isLoading,error,data:hotVideos} = useQuery(['hotVideos'], async() => {
@@ -19,7 +21,10 @@ const Videos = () => {
         isLoading,
         error,
         data: videos,
-      } = useQuery(['videos', keyword],()=> search(keyword));
+      } = useQuery(['videos', keyword],()=>{
+        const youtube = new Youtube();
+        return youtube.search(keyword);
+      });
     console.log("비디오",videos);
     return (
         <div>
