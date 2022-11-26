@@ -1,0 +1,11 @@
+.realContainer {
+    display:flex;
+    justify-content: center;
+}
+.container {
+    
+    width: 80%;
+    display : flex;
+    background-color: red;
+    flex-wrap : wrap;
+}

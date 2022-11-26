@@ -3,7 +3,7 @@ import VideoCard from '../components/VideoCard';
 import { useParams } from 'react-router-dom';
 import {useQuery} from '@tanstack/react-query';
 import useStore from '../store';
-
+import styles from './css/Videos.module.css';
 
 const Videos = () => {
     const {youtube} = useStore();
@@ -29,12 +29,14 @@ const Videos = () => {
             youtube.search(keyword));
     console.log("비디오",videos);
     return (
-        <div>
+        <div className={styles.realContainer}>
+            <div className={styles.container}>
             {isLoading && <p>Loading...</p>}
             {error && <p>Error appeared..</p>}
-            {videos && <ul>
-                {videos.map(items =><VideoCard key={items.id} video={items}/>)}
-                </ul>}
+            {videos && 
+                videos.map(items =><VideoCard  video={items}/>)
+                }
+            </div>
         </div>
     )
     

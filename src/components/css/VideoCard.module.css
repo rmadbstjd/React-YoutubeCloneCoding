@@ -1,0 +1,12 @@
+.card {
+    
+    border: solid black 1px;
+    width : 302px;
+    height : 270px;
+    background-color: white;
+}
+.cardImg {
+    border : solid black 1px;
+    width : 302px;
+    height : 150px;
+}
