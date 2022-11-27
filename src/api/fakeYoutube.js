@@ -1,6 +1,12 @@
 import axios from "axios";
 export default class FakeYoutube {
   constructor() {}
+  async info(id) {
+    return axios.get(`/videos/channel.json`).then((res) => res.data.items);
+  }
+  async related(id) {
+    return axios.get(`/videos/related.json`).then((res) => res.data.items);
+  }
   async search(keyword) {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }

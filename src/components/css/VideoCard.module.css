@@ -1,12 +1,31 @@
+* {
+    color:white;
+}
 .card {
     
     border: solid black 1px;
     width : 302px;
     height : 270px;
-    background-color: white;
+    background-color: #18191A;
+}
+.card2 {
+    display:flex;
+    flex-wrap: wrap;
+    border: solid black 1px;
+    width : 650px;
+    height : 180px;
+    background-color: #18191A;
 }
 .cardImg {
     border : solid black 1px;
-    width : 302px;
-    height : 150px;
+    width : 49%;
+    height : 180px;
+}
+.cardInfo {
+    width: 49%;
+}
+.title {
+    
+    font-weight : bold;
+    
 }

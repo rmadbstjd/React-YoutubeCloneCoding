@@ -1,0 +1,13 @@
+* {
+    background-color: #18191A;
+}
+.container {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.desc {
+    
+    
+}   

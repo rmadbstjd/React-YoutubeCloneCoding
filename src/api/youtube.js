@@ -6,6 +6,19 @@ export default class Youtube {
       params: { key: process.env.REACT_APP_YOUTUBE_API_KEY },
     });
   }
+  async related(id) {
+    //https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&maxResults=25&key=[YOUR_API_KEY]
+    return this.httpClient
+      .get("search", {
+        params: {
+          part: "snippet",
+          relatedToVideoId: `${id}`,
+          maxResults: 25,
+          type: "video",
+        },
+      })
+      .then((res) => res.data.items);
+  }
   async search(keyword) {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }

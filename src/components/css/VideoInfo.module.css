@@ -1,0 +1,21 @@
+.container {
+    width : 500px;
+    
+    display:flex;
+    flex-wrap : wrap;
+    
+}
+.cardImg {
+    border : solid black 1px;
+    border-radius : 50%;
+    width : 40px;
+    height : 40px;
+    background-size : contain;
+}
+.title {
+    margin-left : 15px;
+    line-height : 230%;
+}
+.description {
+    line-height : 150%;
+}
