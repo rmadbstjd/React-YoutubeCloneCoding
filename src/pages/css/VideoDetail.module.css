@@ -2,20 +2,39 @@
     background-color: #18191A;
     
 }
+.test {
+    color:red;
+}
+@media (min-width: 1372px) {
+    .test {
+        background-color: black;
+    }
+    .container {
+        display:flex;
+        justify-content: center;
+        
+    }
+}
+@media only screen and (max-width: 1371px) and (min-width: 720px)  {
+    .test {
+        background-color: aqua;
+        color:white;
+    }
+    .container {
+        display:flex;
+        justify-content: flex-start;
+        
+    }
+}
+@media (max-width : 719px) {
+    .test {
+        background-color: white;
+        color:black;
+    }
+    .container {
+        display:flex;
+        flex-wrap : wrap;
+        justify-content: flex-start;
+    }
+}
 
-.container {
-    
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    
-}
-.container2 {
-    
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    
-    
-}

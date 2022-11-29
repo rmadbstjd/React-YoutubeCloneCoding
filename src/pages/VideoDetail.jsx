@@ -8,18 +8,12 @@ import { useParams } from 'react-router-dom';
 const VideoDetail = () => {
    const {id} = useParams();
    const {youtubeId} = useStore();
-   const [width,setWidth] = useState(2000);
-
-   const resizingHandler = () => {
-    
-    setWidth(window.innerWidth);
-    
-   }
-
-   window.addEventListener("resize", resizingHandler);
+   
     return (
+        
         <div className={styles.box}>
-            <div className={width>=1400?styles.container:styles.container2}>
+            
+            <div className={styles.container}>
                 <div className={styles.desc}>
                     <YouTube className={styles.youtube}
                         videoId = {id}
