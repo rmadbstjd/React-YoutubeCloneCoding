@@ -1,21 +1,26 @@
 .navBarContainer {
+   
     display:flex;
-    background-color: black;
-    justify-content: space-between;
-    
     height : 80px;
-}
-.youtubeContainer {
     
+    
+}
+
+.youtubeContainer {
+   
+    margin-left : auto;
     display: flex;
+    
+    
+    
 }
 .formContainer {
-    
-    min-width: 560px;
-    width: 1060px;
-    margin-left : atuo;
-    margin-right : 230px;
     display:flex;
+    min-width: 560px;
+    width: 965px;
+    margin-left : auto;
+    margin-right : 230px;
+   
     
     
 }
@@ -47,10 +52,13 @@
     
     
 }
-
+.searchImg {
+    background-color: gray;
+}
 .youtubeLogo {
     margin-top : 15px;
     cursor:pointer;
+    
 }
 .submit {
     

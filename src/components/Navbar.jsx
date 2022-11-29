@@ -3,11 +3,11 @@ import styles from './css/Navbar.module.css';
 import {TfiSearch} from 'react-icons/tfi';
 import {AiFillYoutube, AiOutlineBgColors} from 'react-icons/ai';
 import {useNavigate, useParams} from 'react-router-dom';
-import {useMediaQuery} from 'react-responsive';
+
 
 const Navbar = () => {
     
-    const isMobile = useMediaQuery({query: 'max-width:890px'});
+    
     const {keyword} = useParams();
     const [text, setText] = useState('');
    
@@ -38,13 +38,14 @@ const Navbar = () => {
             <form onSubmit={(e) =>submitKeyword(e)} className={styles.submit}>
                 <input type="text" placeholder="Search..." value={text}onChange ={(e) =>setText(e.target.value)}className={styles.search}></input>
                  
-                    <button className={styles.searchBox}><TfiSearch style={{marginTop : "5px"}}size={28} color="white"/></button>
+                    <button className={styles.searchBox}><TfiSearch className={styles.searchImg} style={{marginTop : "5px"}}size={28} color="white"/></button>
                 
             </form>
             </div>
             
             
         </div>
+        
     );
 };
 

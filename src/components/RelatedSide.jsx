@@ -6,7 +6,7 @@ import VideoCard from './VideoCard';
 const RelatedSide = () => {
     const {youtube} = useStore();
     const {id} = useParams();
-    console.log("아이디",id);
+   
     const {
         isLoading,
         error,

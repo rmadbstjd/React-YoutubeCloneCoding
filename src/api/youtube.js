@@ -6,6 +6,17 @@ export default class Youtube {
       params: { key: process.env.REACT_APP_YOUTUBE_API_KEY },
     });
   }
+  //https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=UC_x5XG1OV2P6uZZ5FSM9Ttw&key=[YOUR_API_KEY]
+  async info(id) {
+    return this.httpClient
+      .get("channels", {
+        params: {
+          part: "snippet",
+          id: `${id}`,
+        },
+      })
+      .then((res) => res.data.items);
+  }
   async related(id) {
     //https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&maxResults=25&key=[YOUR_API_KEY]
     return this.httpClient

@@ -15,7 +15,7 @@ const Videos = () => {
         data: videos,
       } = useQuery(['videos', keyword],()=>
             youtube.search(keyword));
-    console.log("비디오",videos);
+    
     return (
         <div className={styles.realContainer}>
             <div className={styles.container}>

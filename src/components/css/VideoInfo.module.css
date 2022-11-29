@@ -1,9 +1,8 @@
 .container {
     width : 500px;
-    
     display:flex;
     flex-wrap : wrap;
-    
+    justify-content: flex-start
 }
 .cardImg {
     border : solid black 1px;

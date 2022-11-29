@@ -1,13 +1,21 @@
 * {
     background-color: #18191A;
+    
 }
+
 .container {
+    
     display:flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    
     
 }
-.desc {
+.container2 {
+    
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     
     
-}   
+}

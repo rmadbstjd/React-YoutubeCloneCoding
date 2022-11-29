@@ -1,17 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import YouTube from 'react-youtube';
 import styles from './css/VideoDetail.module.css'
 import useStore from '../store';
 import VideoInfo from '../components/VideoInfo';
 import RelatedSide from '../components/RelatedSide';
+import { useParams } from 'react-router-dom';
 const VideoDetail = () => {
+   const {id} = useParams();
    const {youtubeId} = useStore();
+   const [width,setWidth] = useState(2000);
+
+   const resizingHandler = () => {
+    
+    setWidth(window.innerWidth);
+    
+   }
+
+   window.addEventListener("resize", resizingHandler);
     return (
-        <div>
-            <div className={styles.container}>
+        <div className={styles.box}>
+            <div className={width>=1400?styles.container:styles.container2}>
                 <div className={styles.desc}>
                     <YouTube className={styles.youtube}
-                        videoId = {youtubeId}
+                        videoId = {id}
                         opts={{
                         width: "700",
                         height: "470",
