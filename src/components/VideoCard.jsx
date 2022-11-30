@@ -10,7 +10,7 @@ const VideoCard = ({video,type}) => {
     
     const cardClick = () => {
         typeof(video.id)==='object'?setYoutubeId(video.id.videoId):setYoutubeId(video.id);
-        console.log("여기서추가",channelId);
+       
         setIdforChannel(channelId);
         typeof(video.id)==='object'?setIdforYoutube(video.id.videoId):setIdforYoutube(video.id);    
         navigate(`/videos/watch/${typeof(video.id)!=='object'?video.id:video.id.videoId}`);

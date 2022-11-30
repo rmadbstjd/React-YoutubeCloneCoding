@@ -12,14 +12,14 @@ const RelatedSide = () => {
         error,
         data: relatedVideos,
       } = useQuery(['relatedVideos',id],()=>
-            youtube.related(id));
+            youtube.related(id), {staleTime : 1000 * 60 * 5});
     
     return (
         <div>
             {isLoading && <p>Loading...</p>}
             {error && <p>Error appeared..</p>}
             {relatedVideos && 
-                relatedVideos.map(items =><VideoCard video={items} type="related"/>)
+                relatedVideos.map((items,index) =><VideoCard video={items} type="related" key={index}/>)
                 }
         </div>
     );

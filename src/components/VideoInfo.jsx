@@ -10,7 +10,7 @@ const VideoInfo = () => {
     const {id} = useParams();
     useEffect(() => {
       setId(forId.youtube.indexOf(id));
-      console.log("아이디바뀜!!");
+      
       
       }, [
        id
@@ -22,13 +22,13 @@ const VideoInfo = () => {
     } = useQuery(['info',forId.channel[Id]],()=>{
         
           
-          console.log("Id의 인덱스",Id);
+          
         return youtube.info(forId.channel[Id]);
-        });
+        },{staleTime : 1000 * 60 * 5});
      
 
     
-    console.log("info",info);
+    
     return (
         <div className={styles.container}>
             {info && <div className={styles.cardImg}style={{backgroundImage:"url("+`${info[0].snippet.thumbnails.default.url}`+")"}}></div>}
