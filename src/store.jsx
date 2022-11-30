@@ -4,7 +4,7 @@ import {devtools}from 'zustand/middleware';
 import Youtube from'../src/api/youtube';
 import fakeYoutube from '../src/api/fakeYoutube';
 const store = set => ({
-  youtube : new fakeYoutube(),
+  youtube : new Youtube(),
   youtubeId :'',
   forId :{
     channel:[],
