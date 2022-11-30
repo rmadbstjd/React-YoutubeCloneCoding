@@ -10,10 +10,12 @@
     width : 40px;
     height : 40px;
     background-size : contain;
+    cursor:pointer;
 }
 .title {
     margin-left : 15px;
     line-height : 230%;
+    cursor:pointer;
 }
 .description {
     line-height : 150%;
